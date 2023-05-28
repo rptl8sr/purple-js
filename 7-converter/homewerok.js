@@ -19,19 +19,19 @@ function getRandomInt(min=0, max=100) {
 }
 
 let amount = getRandomInt();
-console.log(currencyConverter(getRandomInt()));
+console.log(currencyConverter(amount));
 
 amount = getRandomInt();
-console.log(currencyConverter(getRandomInt(), 'usd'));
+console.log(currencyConverter(amount, 'usd'));
 
 amount = getRandomInt();
-console.log(currencyConverter(getRandomInt(), 'eur'));
+console.log(currencyConverter(amount, 'eur'));
 
 amount = getRandomInt();
-console.log(currencyConverter(getRandomInt(), 'rub', 'rub'));
+console.log(currencyConverter(amount, 'rub', 'rub'));
 
 amount = getRandomInt();
-console.log(currencyConverter(getRandomInt(), 'usd', 'rub'));
+console.log(currencyConverter(amount, 'usd', 'rub'));
 
 amount = getRandomInt();
-console.log(currencyConverter(getRandomInt(), 'usd', 'tub'));
+console.log(currencyConverter(amount, 'usd', 'tub'));
