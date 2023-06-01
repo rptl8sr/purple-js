@@ -12,17 +12,8 @@ const ToDoList = {
   deleteTask: function(id) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
   },
-  updateTask: function(id, task) {
-    const patchTask = (t) => {
-      Object.entries(task).forEach(([key, value]) => {
-        t[key] = value;
-        return t;
-      });
-
-      return t;
-    };
-
-    this.tasks = this.tasks.map((t) => (t.id === id ? patchTask(t) : t));
+  updateTask: function(id, patch) {
+    this.tasks = this.tasks.map(task => task.id === id ? { ...task, ...patch } : task);
   },
   sortByPriority: function() {
     this.tasks.sort((a, b) => a.priority - b.priority);
