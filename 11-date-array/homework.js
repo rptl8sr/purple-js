@@ -1,5 +1,5 @@
 const arr = [
-  '10-01-2022', '12/31/2022', 
+  '10-01-2022', '12/31/2022', '31-02-2023', '30/12/2023',
   '32-03-2022', '13/04/2022', '12/04/-2022','10-052022', 
   'ab/bc/dceg', {}, undefined, null, 0, false, ''
 ];
@@ -26,8 +26,15 @@ function checkPattern(date) {
 }
 
 
-function strftime (format, options, date) {
-  return date.toLocaleDateString(format, options).replace(/\./g, '-');
+function strftime (format, options, date, pattern=/\./g) {
+  return date.toLocaleDateString(format, options).replace(pattern, '-');
+}
+
+
+function compareDates(origin) {
+  const format = 'en-US'; // By the way, just for practice the scope 
+  const pattern = /\//g;
+  return origin === strftime(format, options, new Date(origin), pattern);
 }
 
 
@@ -36,6 +43,7 @@ const dates = [];
 const datesObj = arr
   .map(date => checkPattern(date))
   .filter(date => !!date)
+  .filter(date => compareDates(date))
   .map(date => new Date(date));
 
 datesObj.forEach(date => {
