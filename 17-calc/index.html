@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <h1 class="header__title">Calculator</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <form classclass="form main__form">
+                <div class="form__group">
+                    <div class="form__el">
+                        <!-- <label class="form__label" for="firstNumber">First number</label> -->
+                        <input class="form__input" type="number" name="firstNumber" id="firstNumber" placeholder="Enter first number">
+                    </div>
+                    <span class="form__sign active" id="sign" data-sign="+">+</span>
+                    <div class="form__el">
+                        <!-- <label class="form__label" for="secondNumber">Second number</label> -->
+                        <input class="form__input" type="number" name="secondNumber" id="secondNumber" placeholder="Enter second number">
+                    </div>
+                </div>
+                <ul class="form__group">
+                    <li class="form__button" data-sign="+">+</li>
+                    <li class="form__button" data-sign="-">–</li>
+                    <li class="form__button" data-sign="*">×</li>
+                    <li class="form__button" data-sign="/">÷</li>
+                </ul>
+                <button class="form__equal">=</button>
+            </form>
+            <p class="main__exp" id="expression">... + ... =</p>
+            <p class="main__result" id="result">...</p>
+        </div>
+    </main>
+</body>
+</html>
